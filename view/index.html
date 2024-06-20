@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Model Query</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5BD1D7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="file"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .response {
+            margin-top: 20px;
+        }
+        .response p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .response a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            border-radius: 4px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .response a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI MODEL TAPAS</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="csvfile">Upload CSV file:</label>
+            <input type="file" id="csvfile" name="csvfile" accept=".csv" required><br>
+            <label for="queries">Enter your queries:</label>
+            <input type="text" id="queries" name="queries" placeholder="e.g., What is the total energy consumption?; What is the average consumption?" required><br>
+            <input type="submit" value="Submit">
+        </form>
+        <div class="response" id="response"></div>
+    </div>
+</body>
+</html>
